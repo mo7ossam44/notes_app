@@ -5,12 +5,11 @@ class CustomTextFiled extends StatelessWidget {
   const CustomTextFiled({
     super.key,
     required this.text,
-    required this.contentPaddingVertical,
-    required this.contentPaddingHorizontal,
+
+    required this.maxlines,
   });
   final String text;
-  final double contentPaddingVertical;
-  final double contentPaddingHorizontal;
+  final int maxlines;
 
   OutlineInputBorder buildBorder() {
     return OutlineInputBorder(
@@ -24,12 +23,9 @@ class CustomTextFiled extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: TextField(
+        maxLines: maxlines,
         cursorColor: KPrimaryColor,
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.symmetric(
-            vertical: contentPaddingVertical,
-            horizontal: contentPaddingHorizontal,
-          ),
           hintText: text,
           hintStyle: TextStyle(color: KPrimaryColor),
           border: buildBorder(),
