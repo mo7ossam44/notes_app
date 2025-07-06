@@ -12,16 +12,8 @@ class AddNoteButtomSheet extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          CustomTextFiled(
-            text: 'Title',
-            contentPaddingHorizontal: 10,
-            contentPaddingVertical: 0,
-          ),
-          CustomTextFiled(
-            text: 'Content',
-            contentPaddingHorizontal: 10,
-            contentPaddingVertical: 70,
-          ),
+          CustomTextFiled(text: 'Title', maxlines: 1),
+          CustomTextFiled(text: 'Content', maxlines: 5),
           Spacer(),
           CustomInsideBottom(text: 'Add'),
         ],
