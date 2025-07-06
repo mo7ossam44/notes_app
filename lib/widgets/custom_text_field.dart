@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes/constants.dart';
 
 class CustomTextFiled extends StatelessWidget {
   const CustomTextFiled({
@@ -11,23 +12,29 @@ class CustomTextFiled extends StatelessWidget {
   final double contentPaddingVertical;
   final double contentPaddingHorizontal;
 
+  OutlineInputBorder buildBorder() {
+    return OutlineInputBorder(
+      borderRadius: BorderRadius.circular(12),
+      borderSide: BorderSide(color: KPrimaryColor),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: TextField(
+        cursorColor: KPrimaryColor,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.symmetric(
             vertical: contentPaddingVertical,
             horizontal: contentPaddingHorizontal,
           ),
           hintText: text,
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-            borderSide: BorderSide(
-              color: const Color.fromARGB(255, 120, 255, 241),
-            ),
-          ),
+          hintStyle: TextStyle(color: KPrimaryColor),
+          border: buildBorder(),
+          enabledBorder: buildBorder(),
+          focusedBorder: buildBorder(),
         ),
       ),
     );
