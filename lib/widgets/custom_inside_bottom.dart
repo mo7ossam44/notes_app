@@ -17,7 +17,7 @@ class CustomInsideButton extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           height: 50,
           decoration: BoxDecoration(
-            color: KPrimaryColor,
+            color: kPrimaryColor,
             borderRadius: BorderRadius.circular(12),
           ),
           child: Text(

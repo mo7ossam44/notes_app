@@ -14,7 +14,7 @@ class CustomTextFiled extends StatelessWidget {
   OutlineInputBorder buildBorder() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
-      borderSide: BorderSide(color: KPrimaryColor),
+      borderSide: BorderSide(color: kPrimaryColor),
     );
   }
 
@@ -24,10 +24,10 @@ class CustomTextFiled extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: TextField(
         maxLines: maxlines,
-        cursorColor: KPrimaryColor,
+        cursorColor: kPrimaryColor,
         decoration: InputDecoration(
           hintText: text,
-          hintStyle: TextStyle(color: KPrimaryColor),
+          hintStyle: TextStyle(color: kPrimaryColor),
           border: buildBorder(),
           enabledBorder: buildBorder(),
           focusedBorder: buildBorder(),
