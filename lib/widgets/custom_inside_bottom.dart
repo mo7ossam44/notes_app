@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:notes/constants.dart';
 
 class CustomInsideButton extends StatelessWidget {
-  const CustomInsideButton({super.key, required this.text});
+  const CustomInsideButton({super.key, required this.text, this.onTap});
 
   final String text;
-
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: GestureDetector(
-        onTap: () {},
+        onTap: onTap,
         child: Container(
           alignment: Alignment.center,
           width: MediaQuery.of(context).size.width,

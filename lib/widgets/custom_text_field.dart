@@ -5,11 +5,12 @@ class CustomTextFiled extends StatelessWidget {
   const CustomTextFiled({
     super.key,
     required this.text,
-
     required this.maxlines,
+    this.onSaved,
   });
   final String text;
   final int maxlines;
+  final void Function(String?)? onSaved;
 
   OutlineInputBorder buildBorder() {
     return OutlineInputBorder(
@@ -22,7 +23,15 @@ class CustomTextFiled extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
-      child: TextField(
+      child: TextFormField(
+        validator: (value) {
+          if (value?.isEmpty ?? true) {
+            return 'Field is required';
+          } else {
+            return null;
+          }
+        },
+        onSaved: onSaved,
         maxLines: maxlines,
         cursorColor: kPrimaryColor,
         decoration: InputDecoration(
