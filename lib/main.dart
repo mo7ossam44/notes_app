@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:notes/constants.dart';
-import 'package:notes/models/note_model.dart';
 import 'package:notes/views/notes_view.dart';
+import 'package:notes/models/note_model.dart';
 
 void main() async {
   await Hive.initFlutter();
