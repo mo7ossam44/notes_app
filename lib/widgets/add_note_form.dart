@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:notes/widgets/custom_inside_bottom.dart';
+import 'package:notes/models/note_model.dart';
 import 'package:notes/widgets/custom_text_field.dart';
+import 'package:notes/widgets/custom_inside_bottom.dart';
 
 class AddNoteForm extends StatefulWidget {
   const AddNoteForm({super.key});
@@ -13,6 +14,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
   final GlobalKey<FormState> formKey = GlobalKey();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   String? title, subtitle;
+  NoteModel? noteModel;
 
   @override
   Widget build(BuildContext context) {
