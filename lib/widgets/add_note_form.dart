@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:notes/widgets/custom_inside_bottom.dart';
 import 'package:notes/widgets/custom_text_field.dart';
@@ -42,11 +40,8 @@ class _AddNoteFormState extends State<AddNoteForm> {
             onTap: () {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
-                log(title!);
-                log(subtitle!);
               } else {
                 autovalidateMode = AutovalidateMode.always;
-                setState(() {});
               }
             },
           ),
