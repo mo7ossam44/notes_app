@@ -17,10 +17,10 @@ class NotesListView extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 8),
             child: NoteItem(
               noteModel: NoteModel(
-                color: Colors.yellow.shade200,
+                color: 20,
                 title: 'Flutter Tips',
                 subtitle: 'build yor career with thrwat same',
-                dateTime: DateTime(2000),
+                dateTime: DateTime.now().toString(),
               ),
             ),
           );
