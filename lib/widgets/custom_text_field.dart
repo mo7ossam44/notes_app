@@ -6,11 +6,12 @@ class CustomTextFiled extends StatelessWidget {
     super.key,
     required this.text,
     required this.maxlines,
-    this.onSaved,
+    this.onSaved, this.onChanged,
   });
   final String text;
   final int maxlines;
   final void Function(String?)? onSaved;
+  final void Function(String)? onChanged;
 
   OutlineInputBorder buildBorder() {
     return OutlineInputBorder(
@@ -24,6 +25,7 @@ class CustomTextFiled extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: TextFormField(
+        onChanged: onChanged,
         validator: (value) {
           if (value?.isEmpty ?? true) {
             return 'Field is required';
